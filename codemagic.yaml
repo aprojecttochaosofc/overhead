@@ -1,0 +1,44 @@
+workflows:
+  overhead-ios:
+    name: Skyforge Overhead iOS
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    working_directory: overhead
+    environment:
+      node: 22.9.0
+      xcode: latest
+      ios_signing:
+        distribution_type: development
+        bundle_identifier: br.controlevoo.app
+    scripts:
+      - name: Install Cordova dependencies
+        script: npm ci
+      - name: Prepare iOS platform
+        script: npx cordova platform add ios@8.2.0 --nosave
+      - name: Apply iOS signing profiles
+        script: xcode-project use-profiles
+      - name: Build signed IPA
+        script: |
+          package_type=$(defaults read ~/export_options.plist method)
+          identity=$(defaults read ~/export_options.plist signingCertificate)
+          team=$(defaults read ~/export_options.plist teamID)
+          profile=$(find "$HOME/Library/MobileDevice/Provisioning Profiles" -name "*.mobileprovision" -print -quit)
+          profile_uuid=$(grep UUID -A1 -a "$profile" | grep -io "[-A-F0-9]\{36\}")
+
+          cat <<EOF > build.json
+          {
+            "ios": {
+              "release": {
+                "codeSignIdentity": "$identity",
+                "developmentTeam": "$team",
+                "packageType": "$package_type",
+                "provisioningProfile": "$profile_uuid"
+              }
+            }
+          }
+          EOF
+
+          npx cordova build ios --release --device --buildConfig=build.json
+    artifacts:
+      - overhead/platforms/ios/build/device/*.ipa
+      - /tmp/xcodebuild_logs/*.log
