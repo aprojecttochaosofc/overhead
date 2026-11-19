@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Controles do overhead</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <button
+                class="butomkey"
+                type="button"
+                data-positions="2"
+                data-actions="twoOff,twoOn"
+                data-state="0"
+                aria-label="Chavinha de duas posições">
+                <img src="assets/keysbuttom.png" alt="">
+            </button>
+            <small>ohSw2</small>
+        </td>
+        <td>
+            <button
+                class="butomkey"
+                type="button"
+                data-positions="3"
+                data-direction="1"
+                data-actions="threeOff,threeCenter,threeOn"
+                data-state="0"
+                aria-label="Chavinha de três posições">
+                <img src="assets/keysbuttom.png" alt="">
+            </button>
+            <small>ohSw3</small>
+        </td>
+        <td>
+            <button
+                class="push-button"
+                type="button"
+                data-state="off"
+                data-fault="false"
+                data-actions="pushOff,pushOn"
+                aria-label="Botão quadrado">
+                <span class="fault-text">FAULT</span>
+                <span class="off-text">OFF</span>
+            </button>
+            <small>ohPbSq</small>
+        </td>
+        <td>
+            <button
+                class="push-button push-button-status"
+                type="button"
+                data-state="off"
+                data-fault="false"
+                data-callback="pushButtonPulse"
+                aria-label="Botão quadrado: OFF">
+                <span class="fault-text">FAULT</span>
+                <span class="off-text">OFF</span>
+                <span class="on-text">ON</span>
+                <span class="avail-text">AVAIL</span>
+            </button>
+            <small>ohPbSq3</small>
+        </td>
+        <td>
+            <div class="fault-indicator"
+                data-state="on"
+                data-status-state="off"
+                data-status-text=""
+                role="status"
+                aria-label="FAULT ativa">
+                <span class="fault-text">FAULT</span>
+                <span class="status-text"></span>
+            </div>
+            <small>ohFault</small>
+        </td>
+        <td>
+            <button
+                class="round-button"
+                type="button"
+                data-fault="false"
+                data-callback="roundButtonCallback"
+                aria-label="Botão redondo momentâneo">
+            </button>
+            <small>ohPbRd</small>
+        </td>
+        <td>
+            <output class="overhead-display" aria-label="26.5 V">
+                <span class="display-value">26.5</span>
+                <span class="display-unit">V</span>
+            </output>
+            <small>ohDisp</small>
+        </td>
+        <td>
+            <button
+                class="airbus-knob knob-vertical"
+                type="button"
+                data-position="1"
+                data-direction="1"
+                data-actions="knobVertical"
+                aria-label="Seletor vertical de três posições">
+                <span class="knob-body">
+                    <span class="knob-pointer"></span>
+                    <span class="knob-center"></span>
+                </span>
+            </button>
+            <small>ohKnV</small>
+        </td>
+        <td>
+            <button
+                class="airbus-knob knob-horizontal"
+                type="button"
+                data-position="1"
+                data-direction="1"
+                data-actions="knobHorizontal"
+                aria-label="Seletor horizontal de três posições">
+                <span class="knob-body">
+                    <span class="knob-pointer"></span>
+                    <span class="knob-center"></span>
+                </span>
+            </button>
+            <small>ohKnH</small>
+        </td>
+    </tr>
+</table>
+<script>
+(function () {
+    'use strict';
+
+    function callAction(name, control, state) {
+        const callback = window[name];
+        if (typeof callback === 'function') {
+            return callback(control, state);
+        }
+    }
+
+    function buttomkeys(button) {
+        if (button.dataset.fault === 'true') return;
+
+        const totalPositions = Number(button.dataset.positions);
+        const actions = button.dataset.actions.split(',');
+        let state = Number(button.dataset.state);
+
+        if (totalPositions === 2) {
+            state = state === 0 ? 2 : 0;
+        } else {
+            let direction = Number(button.dataset.direction || '1');
+
+            state += direction;
+
+            if (state >= 2) {
+                state = 2;
+                direction = -1;
+            }
+
+            if (state <= 0) {
+                state = 0;
+                direction = 1;
+            }
+
+            button.dataset.direction = String(direction);
+        }
+
+        button.dataset.state = String(state);
+
+        const image = button.querySelector('img');
+
+        if (image) {
+            image.style.left = String(-state * 100) + '%';
+        }
+
+        callAction(actions[state], button, state);
+    }
+
+    function togglePushButton(button) {
+        if (button.dataset.fault === 'true' || button.disabled) return;
+
+        const state = button.dataset.state === 'off' ? 'on' : 'off';
+        button.dataset.state = state;
+        const actions = button.dataset.actions.split(',');
+        callAction(actions[state === 'off' ? 0 : 1], button, state);
+    }
+
+    function setPushButtonStatus(button, value) {
+        const rawState = value && typeof value === 'object' ? value.state : value;
+        const requested = String(rawState === undefined || rawState === null ? '' : rawState)
+            .trim()
+            .toLowerCase();
+        const state = requested === 'available' ? 'avail' : requested;
+
+        if (!button || !button.classList.contains('push-button-status') ||
+            !['off', 'on', 'avail'].includes(state)) return false;
+        button.dataset.state = state;
+        button.setAttribute('aria-label', 'Botão quadrado: ' + state.toUpperCase());
+        return true;
+    }
+
+    function pulsePushButton(button) {
+        if (button.dataset.fault === 'true' || button.disabled) return;
+
+        const action = button.dataset.callback || 'pushButtonPulse';
+        const result = callAction(action, button, button.dataset.state || 'off');
+        if (result !== undefined) setPushButtonStatus(button, result);
+    }
+
+    function butonfail(idBotao, falha) {
+        const button = document.getElementById(idBotao);
+
+        if (!button) return;
+
+        const isFault = falha === undefined ? true : Boolean(falha);
+
+        button.dataset.fault = String(isFault);
+        button.setAttribute('aria-disabled', String(isFault));
+        button.disabled = isFault;
+    }
+
+    document.querySelectorAll('.butomkey').forEach(function (button) {
+        button.addEventListener('click', function () {
+            buttomkeys(button);
+        });
+    });
+
+    document.querySelectorAll('.push-button').forEach(function (button) {
+        button.addEventListener('click', function () {
+            if (button.classList.contains('push-button-status')) {
+                pulsePushButton(button);
+            } else {
+                togglePushButton(button);
+            }
+        });
+    });
+
+    document.querySelectorAll('.round-button').forEach(function (button) {
+        button.addEventListener('click', function () {
+            if (button.dataset.fault === 'true') return;
+
+            // Um clique chama uma única função, sem alternar o estado do botão.
+            callAction(button.dataset.callback, button);
+        });
+    });
+
+    document.querySelectorAll('.airbus-knob').forEach(function (knob) {
+        knob.addEventListener('click', function () {
+            if (knob.dataset.fault === 'true') return;
+
+            let position = Number(knob.dataset.position);
+            let direction = Number(knob.dataset.direction || '1');
+
+            position += direction;
+
+            if (position >= 3) {
+                position = 3;
+                direction = -1;
+            }
+
+            if (position <= 1) {
+                position = 1;
+                direction = 1;
+            }
+
+            knob.dataset.position = String(position);
+            knob.dataset.direction = String(direction);
+
+            callAction(knob.dataset.actions, knob, position);
+        });
+    });
+
+    window.setFaultLight = function (indicator, active) {
+        if (typeof indicator === 'string') {
+            indicator = document.getElementById(indicator);
+        }
+
+        if (!indicator) return;
+
+        const isActive = active === true || active === 'true' || active === 1;
+
+        indicator.dataset.state = isActive ? 'on' : 'off';
+        indicator.setAttribute(
+            'aria-label',
+            isActive ? 'FAULT ativa' : 'FAULT apagada'
+        );
+    };
+    window.setOhDisp = function (display, value, unit) {
+        if (typeof display === 'string') {
+            display = document.getElementById(display);
+        }
+
+        if (!display) return;
+
+        const valueElement = display.querySelector('.display-value');
+        const unitElement = display.querySelector('.display-unit');
+
+        if (valueElement) {
+            valueElement.textContent = String(value);
+        }
+
+        if (unit !== undefined && unitElement) {
+            unitElement.textContent = String(unit);
+        }
+
+        const shownUnit = unitElement ? unitElement.textContent : '';
+        display.setAttribute(
+            'aria-label',
+            String(value) + (shownUnit ? ' ' + shownUnit : '')
+        );
+    };
+    window.butonfail = butonfail;
+
+    window.twoOff = function () {};
+    window.twoOn = function () {};
+
+    window.threeOff = function () {};
+    window.threeCenter = function () {};
+    window.threeOn = function () {};
+
+    window.pushOff = function () {};
+    window.pushOn = function () {};
+
+    window.pushButtonPulse = function (button) {
+        window.setTimeout(function () {
+            setPushButtonStatus(button, 'avail');
+        }, 1400);
+        return 'on';
+    };
+
+    window.roundButtonCallback = function () {};
+
+    window.knobVertical = function (knob, position) {};
+    window.knobHorizontal = function (knob, position) {};
+})();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

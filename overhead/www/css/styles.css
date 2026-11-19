@@ -1,0 +1,496 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    background: #fff;
+    color: #222;
+    font-family: Arial, sans-serif;
+}
+
+/* INDICADOR DE FALHA */
+.firentn .round-button{
+	margin-top: -20px;
+}
+.fault-indicator {
+    position: relative;
+    display: block;
+    width: clamp(48px, 6vw, 72px);
+    aspect-ratio: 1.35 / 1;
+    overflow: hidden;
+    margin: 10px auto 3px;
+    border: 2px solid #5c4c42;
+    border-radius: 4px;
+    background: linear-gradient(145deg, #202a30, #090e11 70%);
+    box-shadow:
+        inset 0 0 0 2px #080b0d,
+        inset 0 2px 4px #87949a55,
+        0 1px 3px #000;
+}
+
+.fault-indicator .fault-text,
+.fault-indicator .status-text {
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    font: 900 clamp(8px, .8vw, 11px) / 1 Arial, sans-serif;
+    transition: color .15s ease, text-shadow .15s ease;
+}
+
+.fault-indicator .fault-text {
+    display: none;
+    color: #51483a;
+}
+
+.fault-indicator .status-text {
+    display: none;
+    color: #f4f7f8;
+    text-shadow: 0 0 4px #fff8;
+    white-space: nowrap;
+}
+
+.fault-indicator[data-state="on"] .fault-text {
+    display: flex;
+    color: #ffad27;
+    text-shadow: 0 0 4px #ff9e1a99, 0 0 8px #ff9e1a66;
+}
+
+.fault-indicator[data-state="off"][data-status-state="on"] .status-text {
+    display: flex;
+}
+
+/* Anti-ice: the selected state is a blue ON annunciator; OFF remains dark. */
+.overhead-slice[data-slice="084"] .push-button[data-state="off"] .off-text,
+.overhead-slice[data-slice="085"] .push-button[data-state="off"] .off-text,
+.overhead-slice[data-slice="086"] .push-button[data-state="off"] .off-text {
+    display: none;
+}
+
+.overhead-slice[data-slice="084"] .push-button::after,
+.overhead-slice[data-slice="085"] .push-button::after,
+.overhead-slice[data-slice="086"] .push-button::after {
+    position: absolute;
+    left: 19%;
+    right: 19%;
+    bottom: 13%;
+    display: none;
+    padding: 3px 1px 2px;
+    border: 1px solid #438fd0;
+    border-radius: 1px;
+    background: #153553;
+    color: #65b5ff;
+    content: "ON";
+    font: 900 clamp(8px, .85vw, 13px) / 1 Arial, sans-serif;
+    text-align: center;
+    text-shadow: 0 0 5px #369dff99;
+    pointer-events: none;
+}
+
+.overhead-slice[data-slice="084"] .push-button[data-state="on"]::after,
+.overhead-slice[data-slice="085"] .push-button[data-state="on"]::after,
+.overhead-slice[data-slice="086"] .push-button[data-state="on"]::after {
+    display: block;
+}
+/* CHAVINHAS */
+.butomkey {
+    position: relative;
+    display: block;
+    width: clamp(30px, 5vw, 56px);
+    aspect-ratio: 60 / 120;
+    overflow: hidden;
+    margin: 10px auto 3px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    appearance: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.butomkey img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 300%;
+    height: 100%;
+    max-width: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* VISOR DIGITAL */
+.overhead-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: clamp(82px, 8.5vw, 112px);
+    height: clamp(30px, 3.2vw, 38px);
+    margin: 10px auto 3px;
+    padding: 2px 7px;
+    border: 3px solid #625f58;
+    border-radius: 2px;
+    background: linear-gradient(180deg, #555b5d, #25282a);
+    box-shadow:
+        inset 0 0 0 1px #111315,
+        inset 0 1px 2px #8e929255,
+        0 1px 3px #0008;
+    color: #f2b64a;
+    font-family: "Courier New", Consolas, monospace;
+    font-size: clamp(18px, 2vw, 26px);
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 0 0 4px #f4ad3b66, 0 0 1px #ffd47e;
+    white-space: nowrap;
+}
+
+.overhead-display .display-value {
+    letter-spacing: .04em;
+}
+
+.overhead-display .display-unit {
+    align-self: flex-start;
+    margin-top: 4px;
+    font-size: .65em;
+}
+/* BOTÃO QUADRADO */
+.push-button {
+    position: relative;
+    display: block;
+    width: clamp(48px, 6vw, 72px);
+    aspect-ratio: 1.35 / 1;
+    overflow: hidden;
+    margin: 10px auto 3px;
+    padding: 0;
+    border: 2px solid #5c4c42;
+    border-radius: 4px;
+    background: linear-gradient(145deg, #202a30, #090e11 70%);
+    box-shadow:
+        inset 0 0 0 2px #080b0d,
+        inset 0 2px 4px #87949a55,
+        0 1px 3px #000;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.push-button .fault-text,
+.push-button .off-text,
+.push-button-status .on-text,
+.push-button-status .avail-text {
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    display: block;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.push-button .fault-text {
+    top: 16%;
+    color: #ffad27;
+    font-size: clamp(7px, .7vw, 11px);
+    text-shadow: 0 0 4px #ff9e1a66;
+    visibility: hidden;
+}
+
+.push-button .off-text {
+    left: 19%;
+    right: 19%;
+    bottom: 13%;
+    padding: 3px 1px 2px;
+    border: 1px solid #91afc0;
+    border-radius: 1px;
+    background: #263741;
+    color: #a9c7d8;
+    font-size: clamp(8px, .85vw, 13px);
+    text-shadow: 0 0 4px #5cbcf566;
+}
+
+.push-button[data-state="on"] .off-text {
+    display: none;
+}
+
+.push-button[data-fault="true"] .fault-text {
+    visibility: visible;
+}
+
+.push-button[data-fault="true"] .off-text {
+    display: block;
+}
+
+.push-button-status .on-text,
+.push-button-status .avail-text {
+    left: 19%;
+    right: 19%;
+    bottom: 13%;
+    display: none;
+    padding: 3px 1px 2px;
+    border: 1px solid transparent;
+    border-radius: 1px;
+    font-size: clamp(8px, .85vw, 13px);
+}
+
+.push-button-status[data-state="off"] .off-text {
+    border-color: #303a40;
+    background: #101619;
+    color: #69757a;
+    text-shadow: none;
+}
+
+.push-button-status[data-state="on"] .off-text,
+.push-button-status[data-state="avail"] .off-text {
+    display: none;
+}
+
+.push-button-status[data-state="on"] .on-text {
+    display: block;
+    border-color: #438fd0;
+    background: #153553;
+    color: #65b5ff;
+    text-shadow: 0 0 5px #369dff99;
+}
+
+.push-button-status[data-state="avail"] .avail-text {
+    display: block;
+    border-color: #48b96a;
+    background: #173a24;
+    color: #6ee48b;
+    text-shadow: 0 0 5px #39d76c99;
+}
+
+.push-button-status[data-fault="true"] .off-text,
+.push-button-status[data-fault="true"] .on-text,
+.push-button-status[data-fault="true"] .avail-text {
+    display: none;
+}
+
+.push-button:focus {
+    outline: none;
+}
+
+.push-button:focus-visible,
+.butomkey:focus-visible,
+.round-button:focus-visible,
+.airbus-knob:focus-visible {
+    outline: 2px solid #1769aa;
+    outline-offset: 3px;
+}
+
+/* BOTÃO REDONDO MOMENTÂNEO */
+.round-button {
+    position: relative;
+    display: block;
+    width: clamp(28px, min(3.3vw, 6vh), 44px);
+    aspect-ratio: 1;
+    margin: 10px auto 3px;
+    padding: 0;
+    appearance: none;
+    border: 1px solid #111;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 50% 48%,
+        #333638 0 43%,
+        #111315 44% 57%,
+        #54514c 58% 63%,
+        #202123 64% 82%,
+        #777067 83% 87%,
+        #1d1c1a 88% 100%
+    );
+    box-shadow:
+        inset 0 1px 2px #d7d7d755,
+        inset 0 -2px 4px #000a,
+        0 2px 4px #0008;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.round-button::before {
+    content: "";
+    position: absolute;
+    inset: 8%;
+    border: 1px solid #090a0b;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 42% 35%,
+        #363839 0 54%,
+        #202223 72%,
+        #111 100%
+    );
+    box-shadow:
+        inset 0 2px 3px #aaa6,
+        inset 0 -5px 8px #000c,
+        0 1px 3px #000;
+    pointer-events: none;
+}
+
+.round-button::after {
+    content: "";
+    position: absolute;
+    inset: 25%;
+    border: 1px solid #101112;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 36% 28%,
+        #4b4d4e 0,
+        #343637 34%,
+        #252728 72%,
+        #151617 100%
+    );
+    box-shadow:
+        inset 0 2px 3px #aaa6,
+        inset 0 -4px 7px #000b,
+        0 1px 3px #000;
+    transition: transform .08s ease, box-shadow .08s ease;
+    pointer-events: none;
+}
+
+.round-button:active::after {
+    transform: translateY(2px);
+    box-shadow:
+        inset 0 1px 2px #8886,
+        inset 0 -2px 4px #000b;
+}
+
+.round-button:focus {
+    outline: none;
+}
+
+/* SELETORES AIRBUS */
+.airbus-knob {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: clamp(44px, 5vw, 64px);
+    aspect-ratio: 1;
+    margin: 10px auto 3px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.knob-body {
+    position: relative;
+    display: block;
+    width: 82%;
+    height: 82%;
+    border: 2px solid #181818;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 35% 25%,
+        #777 0,
+        #484848 25%,
+        #252525 65%,
+        #101010 100%
+    );
+    box-shadow:
+        inset 0 2px 3px #aaa8,
+        inset 0 -4px 5px #000,
+        0 2px 3px #0008;
+    transition: transform .12s;
+}
+
+.knob-pointer {
+    position: absolute;
+    top: 8%;
+    left: 42.5%;
+    width: 15%;
+    height: 38%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #aaa, #fff, #777);
+    box-shadow: 0 0 2px #000, 0 1px 2px #000;
+    transform-origin: 50% 112%;
+    transition: transform .18s ease;
+}
+
+.knob-center {
+    position: absolute;
+    top: 38%;
+    left: 38%;
+    width: 24%;
+    height: 24%;
+    border: 1px solid #111;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #777, #333 60%, #111);
+    box-shadow: inset 0 1px 2px #aaa6;
+}
+
+.knob-vertical[data-position="1"] .knob-pointer {
+    transform: rotate(-45deg);
+}
+
+.knob-vertical[data-position="2"] .knob-pointer {
+    transform: rotate(0deg);
+}
+
+.knob-vertical[data-position="3"] .knob-pointer {
+    transform: rotate(45deg);
+}
+
+.knob-horizontal[data-position="1"] .knob-pointer {
+    transform: rotate(45deg);
+}
+
+.knob-horizontal[data-position="2"] .knob-pointer {
+    transform: rotate(90deg);
+}
+
+.knob-horizontal[data-position="3"] .knob-pointer {
+    transform: rotate(135deg);
+}
+
+.airbus-knob:active .knob-body {
+    filter: brightness(1.25);
+}
+
+
+
+
+
+
+
+
+/* Controles dentro das fatias ficam centralizados e recebem cliques. */
+.overhead-slice {
+    overflow: visible;
+}
+
+.overhead-slice > .airbus-knob,
+.overhead-slice > .butomkey,
+.overhead-slice > .push-button,
+.overhead-slice > .round-button,
+.overhead-slice > .fault-indicator,
+.overhead-slice > .overhead-display {
+    position: relative;
+    z-index: 1000;
+    margin: 0;
+    pointer-events: auto;
+}
+
+html[data-aircraft-powered="false"] .push-button:not([data-battery-id]):not([data-external-power]) .fault-text,
+html[data-aircraft-powered="false"] .push-button:not([data-battery-id]):not([data-external-power]) .off-text,
+html[data-aircraft-powered="false"] .push-button:not([data-battery-id]):not([data-external-power]) .on-text,
+html[data-aircraft-powered="false"] .push-button:not([data-battery-id]):not([data-external-power]) .avail-text,
+html[data-aircraft-powered="false"] .fault-indicator .fault-text,
+html[data-aircraft-powered="false"] .fault-indicator .status-text {
+    display: none !important;
+    visibility: hidden !important;
+}
+

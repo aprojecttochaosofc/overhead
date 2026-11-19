@@ -1,0 +1,1288 @@
+:root {
+    color-scheme: dark;
+    background: var(--overhead-brightness-background, #506879);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html,
+body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--overhead-brightness-background, #506879); }
+
+.overhead-viewport {
+    position: fixed;
+    inset: 0;
+    width: var(--viewport-width, 100vw);
+    height: var(--viewport-height, 100dvh);
+    overflow: hidden;
+    overscroll-behavior: contain;
+    touch-action: none;
+    background: var(--overhead-brightness-background, #506879);
+}
+
+.overhead-stage {
+    position: relative;
+    flex: none;
+    width: var(--viewport-width, 100vw);
+    height: var(--viewport-height, 100dvh);
+    background: var(--overhead-brightness-background, #506879);
+}
+
+.overhead-canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: 100%;
+    background: var(--overhead-brightness-background, #506879);
+}
+
+.overhead-slice {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: var(--overhead-brightness-background, #506879);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    pointer-events: none;
+}
+
+.overhead-slice[data-slice="001"] {
+    left: 0.000000%;
+    top: 0.000000%;
+    width: 4.796802%;
+    height: 6.205251%;
+    background-image: url("../imagens/brilho-on/index_01.png");
+}
+
+.overhead-slice[data-slice="002"] {
+    left: 4.796802%;
+    top: 0.000000%;
+    width: 13.790806%;
+    height: 10.501193%;
+    background-image: url("../imagens/brilho-on/index_02.png");
+}
+
+.overhead-slice[data-slice="003"] {
+    left: 18.587608%;
+    top: 0.000000%;
+    width: 13.257828%;
+    height: 10.501193%;
+    background-image: url("../imagens/brilho-on/index_03.png");
+}
+
+.overhead-slice[data-slice="004"] {
+    left: 31.845436%;
+    top: 0.000000%;
+    width: 13.657562%;
+    height: 10.501193%;
+    background-image: url("../imagens/brilho-on/index_04.png");
+}
+
+.overhead-slice[data-slice="005"] {
+    left: 45.502998%;
+    top: 0.000000%;
+    width: 16.055963%;
+    height: 13.007160%;
+    background-image: url("../imagens/brilho-on/index_05.png");
+}
+
+.overhead-slice[data-slice="006"] {
+    left: 61.558961%;
+    top: 0.000000%;
+    width: 4.530313%;
+    height: 6.563246%;
+    background-image: url("../imagens/brilho-on/index_06.png");
+}
+
+.overhead-slice[data-slice="007"] {
+    left: 66.089274%;
+    top: 0.000000%;
+    width: 4.796802%;
+    height: 13.007160%;
+    background-image: url("../imagens/brilho-on/index_07.png");
+}
+
+.overhead-slice[data-slice="008"] {
+    left: 70.886076%;
+    top: 0.000000%;
+    width: 4.663558%;
+    height: 6.563246%;
+    background-image: url("../imagens/brilho-on/index_08.png");
+}
+
+.overhead-slice[data-slice="009"] {
+    left: 75.549634%;
+    top: 0.000000%;
+    width: 4.596935%;
+    height: 13.007160%;
+    background-image: url("../imagens/brilho-on/index_09.png");
+}
+
+.overhead-slice[data-slice="010"] {
+    left: 80.146569%;
+    top: 0.000000%;
+    width: 4.663558%;
+    height: 6.563246%;
+    background-image: url("../imagens/brilho-on/index_10.png");
+}
+
+.overhead-slice[data-slice="011"] {
+    left: 84.810127%;
+    top: 0.000000%;
+    width: 1.399067%;
+    height: 13.007160%;
+    background-image: url("../imagens/brilho-on/index_11.png");
+}
+
+.overhead-slice[data-slice="012"] {
+    left: 86.209194%;
+    top: 0.000000%;
+    width: 11.658894%;
+    height: 2.386635%;
+    background-image: url("../imagens/brilho-on/index_12.png");
+}
+
+.overhead-slice[data-slice="013"] {
+    left: 97.868088%;
+    top: 0.000000%;
+    width: 2.065290%;
+    height: 13.007160%;
+    background-image: url("../imagens/brilho-on/index_13.png");
+}
+
+.overhead-slice[data-slice="014"] {
+    left: 86.209194%;
+    top: 2.386635%;
+    width: 5.063291%;
+    height: 7.756563%;
+    background-image: url("../imagens/brilho-on/index_14.png");
+}
+
+.overhead-slice[data-slice="015"] {
+    left: 91.272485%;
+    top: 2.386635%;
+    width: 1.332445%;
+    height: 7.756563%;
+    background-image: url("../imagens/brilho-on/index_15.png");
+}
+
+.overhead-slice[data-slice="016"] {
+    left: 92.604930%;
+    top: 2.386635%;
+    width: 5.263158%;
+    height: 7.756563%;
+    background-image: url("../imagens/brilho-on/index_16.png");
+}
+
+.overhead-slice[data-slice="017"] {
+    left: 0.000000%;
+    top: 6.205251%;
+    width: 4.796802%;
+    height: 5.966587%;
+    background-image: url("../imagens/brilho-on/index_17.png");
+}
+
+.overhead-slice[data-slice="018"] {
+    left: 61.558961%;
+    top: 6.563246%;
+    width: 4.530313%;
+    height: 6.443914%;
+    background-image: url("../imagens/brilho-on/index_18.png");
+}
+
+.overhead-slice[data-slice="019"] {
+    left: 70.886076%;
+    top: 6.563246%;
+    width: 4.663558%;
+    height: 6.443914%;
+    background-image: url("../imagens/brilho-on/index_19.png");
+}
+
+.overhead-slice[data-slice="020"] {
+    left: 80.146569%;
+    top: 6.563246%;
+    width: 4.663558%;
+    height: 6.443914%;
+    background-image: url("../imagens/brilho-on/index_20.png");
+}
+
+.overhead-slice[data-slice="021"] {
+    left: 86.209194%;
+    top: 10.143198%;
+    width: 11.658894%;
+    height: 2.863962%;
+    background-image: url("../imagens/brilho-on/index_21.png");
+}
+
+.overhead-slice[data-slice="022"] {
+    left: 4.796802%;
+    top: 10.501193%;
+    width: 2.598268%;
+    height: 15.990453%;
+    background-image: url("../imagens/brilho-on/index_22.png");
+}
+
+.overhead-slice[data-slice="023"] {
+    left: 7.395070%;
+    top: 10.501193%;
+    width: 8.594270%;
+    height: 15.990453%;
+    background-image: url("../imagens/brilho-on/index_23.png");
+}
+
+.overhead-slice[data-slice="024"] {
+    left: 15.989340%;
+    top: 10.501193%;
+    width: 2.598268%;
+    height: 15.990453%;
+    background-image: url("../imagens/brilho-on/index_24.png");
+}
+
+.overhead-slice[data-slice="025"] {
+    left: 18.587608%;
+    top: 10.501193%;
+    width: 2.065290%;
+    height: 15.990453%;
+    background-image: url("../imagens/brilho-on/index_25.png");
+}
+
+.overhead-slice[data-slice="026"] {
+    left: 20.652898%;
+    top: 10.501193%;
+    width: 8.727515%;
+    height: 15.990453%;
+    background-image: url("../imagens/brilho-on/index_26.png");
+}
+
+.overhead-slice[data-slice="027"] {
+    left: 29.380413%;
+    top: 10.501193%;
+    width: 2.465023%;
+    height: 15.990453%;
+    background-image: url("../imagens/brilho-on/index_27.png");
+}
+
+.overhead-slice[data-slice="028"] {
+    left: 31.845436%;
+    top: 10.501193%;
+    width: 2.598268%;
+    height: 15.990453%;
+    background-image: url("../imagens/brilho-on/index_28.png");
+}
+
+.overhead-slice[data-slice="029"] {
+    left: 34.443704%;
+    top: 10.501193%;
+    width: 8.327781%;
+    height: 15.990453%;
+    background-image: url("../imagens/brilho-on/index_29.png");
+}
+
+.overhead-slice[data-slice="030"] {
+    left: 42.771486%;
+    top: 10.501193%;
+    width: 2.731512%;
+    height: 15.990453%;
+    background-image: url("../imagens/brilho-on/index_30.png");
+}
+
+.overhead-slice[data-slice="031"] {
+    left: 0.000000%;
+    top: 12.171838%;
+    width: 4.796802%;
+    height: 14.319809%;
+    background-image: url("../imagens/brilho-on/index_31.png");
+}
+
+.overhead-slice[data-slice="032"] {
+    left: 45.502998%;
+    top: 13.007160%;
+    width: 3.797468%;
+    height: 13.484487%;
+    background-image: url("../imagens/brilho-on/index_32.png");
+}
+
+.overhead-slice[data-slice="033"] {
+    left: 49.300466%;
+    top: 13.007160%;
+    width: 6.795470%;
+    height: 6.205251%;
+    background-image: url("../imagens/brilho-on/index_33.png");
+}
+
+.overhead-slice[data-slice="034"] {
+    left: 56.095936%;
+    top: 13.007160%;
+    width: 6.928714%;
+    height: 6.205251%;
+    background-image: url("../imagens/brilho-on/index_34.png");
+}
+
+.overhead-slice[data-slice="035"] {
+    left: 63.024650%;
+    top: 13.007160%;
+    width: 7.195203%;
+    height: 6.205251%;
+    background-image: url("../imagens/brilho-on/index_35.png");
+}
+
+.overhead-slice[data-slice="036"] {
+    left: 70.219853%;
+    top: 13.007160%;
+    width: 6.928714%;
+    height: 6.205251%;
+    background-image: url("../imagens/brilho-on/index_36.png");
+}
+
+.overhead-slice[data-slice="037"] {
+    left: 77.148568%;
+    top: 13.007160%;
+    width: 6.862092%;
+    height: 6.205251%;
+    background-image: url("../imagens/brilho-on/index_37.png");
+}
+
+.overhead-slice[data-slice="038"] {
+    left: 84.010660%;
+    top: 13.007160%;
+    width: 6.928714%;
+    height: 6.205251%;
+    background-image: url("../imagens/brilho-on/index_38.png");
+}
+
+.overhead-slice[data-slice="039"] {
+    left: 90.939374%;
+    top: 13.007160%;
+    width: 6.928714%;
+    height: 6.205251%;
+    background-image: url("../imagens/brilho-on/index_39.png");
+}
+
+.overhead-slice[data-slice="040"] {
+    left: 97.868088%;
+    top: 13.007160%;
+    width: 2.065290%;
+    height: 13.484487%;
+    background-image: url("../imagens/brilho-on/index_40.png");
+}
+
+.overhead-slice[data-slice="041"] {
+    left: 49.300466%;
+    top: 19.212411%;
+    width: 6.795470%;
+    height: 7.279236%;
+    background-image: url("../imagens/brilho-on/index_41.png");
+}
+
+.overhead-slice[data-slice="042"] {
+    left: 56.095936%;
+    top: 19.212411%;
+    width: 6.928714%;
+    height: 7.279236%;
+    background-image: url("../imagens/brilho-on/index_42.png");
+}
+
+.overhead-slice[data-slice="043"] {
+    left: 63.024650%;
+    top: 19.212411%;
+    width: 7.195203%;
+    height: 7.517900%;
+    background-image: url("../imagens/brilho-on/index_43.png");
+}
+
+.overhead-slice[data-slice="044"] {
+    left: 70.219853%;
+    top: 19.212411%;
+    width: 6.928714%;
+    height: 7.279236%;
+    background-image: url("../imagens/brilho-on/index_44.png");
+}
+
+.overhead-slice[data-slice="045"] {
+    left: 77.148568%;
+    top: 19.212411%;
+    width: 6.862092%;
+    height: 7.279236%;
+    background-image: url("../imagens/brilho-on/index_45.png");
+}
+
+.overhead-slice[data-slice="046"] {
+    left: 84.010660%;
+    top: 19.212411%;
+    width: 6.928714%;
+    height: 7.279236%;
+    background-image: url("../imagens/brilho-on/index_46.png");
+}
+
+.overhead-slice[data-slice="047"] {
+    left: 90.939374%;
+    top: 19.212411%;
+    width: 6.928714%;
+    height: 7.279236%;
+    background-image: url("../imagens/brilho-on/index_47.png");
+}
+
+.overhead-slice[data-slice="048"] {
+    left: 0.000000%;
+    top: 26.491647%;
+    width: 4.796802%;
+    height: 73.389021%;
+    background-image: url("../imagens/brilho-on/index_48.png");
+}
+
+.overhead-slice[data-slice="049"] {
+    left: 4.796802%;
+    top: 26.491647%;
+    width: 8.194537%;
+    height: 7.279236%;
+    background-image: url("../imagens/brilho-on/index_49.png");
+}
+
+.overhead-slice[data-slice="050"] {
+    left: 12.991339%;
+    top: 26.491647%;
+    width: 8.061292%;
+    height: 7.279236%;
+    background-image: url("../imagens/brilho-on/index_50.png");
+}
+
+.overhead-slice[data-slice="051"] {
+    left: 21.052632%;
+    top: 26.491647%;
+    width: 8.327781%;
+    height: 7.279236%;
+    background-image: url("../imagens/brilho-on/index_51.png");
+}
+
+.overhead-slice[data-slice="052"] {
+    left: 29.380413%;
+    top: 26.491647%;
+    width: 8.061292%;
+    height: 7.279236%;
+    background-image: url("../imagens/brilho-on/index_52.png");
+}
+
+.overhead-slice[data-slice="053"] {
+    left: 37.441706%;
+    top: 26.491647%;
+    width: 7.994670%;
+    height: 7.279236%;
+    background-image: url("../imagens/brilho-on/index_53.png");
+}
+
+.overhead-slice[data-slice="054"] {
+    left: 45.436376%;
+    top: 26.491647%;
+    width: 3.864091%;
+    height: 17.780430%;
+    background-image: url("../imagens/brilho-on/index_54.png");
+}
+
+.overhead-slice[data-slice="055"] {
+    left: 49.300466%;
+    top: 26.491647%;
+    width: 10.592938%;
+    height: 7.637232%;
+    background-image: url("../imagens/brilho-on/index_55.png");
+}
+
+.overhead-slice[data-slice="056"] {
+    left: 59.893404%;
+    top: 26.491647%;
+    width: 3.131246%;
+    height: 17.780430%;
+    background-image: url("../imagens/brilho-on/index_56.png");
+}
+
+.overhead-slice[data-slice="057"] {
+    left: 70.219853%;
+    top: 26.491647%;
+    width: 6.195869%;
+    height: 0.238663%;
+    background-image: url("../imagens/brilho-on/index_57.png");
+}
+
+.overhead-slice[data-slice="058"] {
+    left: 76.415723%;
+    top: 26.491647%;
+    width: 2.198534%;
+    height: 17.780430%;
+    background-image: url("../imagens/brilho-on/index_58.png");
+}
+
+.overhead-slice[data-slice="059"] {
+    left: 78.614257%;
+    top: 26.491647%;
+    width: 9.860093%;
+    height: 7.279236%;
+    background-image: url("../imagens/brilho-on/index_59.png");
+}
+
+.overhead-slice[data-slice="060"] {
+    left: 88.474350%;
+    top: 26.491647%;
+    width: 2.465023%;
+    height: 17.780430%;
+    background-image: url("../imagens/brilho-on/index_60.png");
+}
+
+.overhead-slice[data-slice="061"] {
+    left: 90.939374%;
+    top: 26.491647%;
+    width: 6.928714%;
+    height: 7.279236%;
+    background-image: url("../imagens/brilho-on/index_61.png");
+}
+
+.overhead-slice[data-slice="062"] {
+    left: 97.868088%;
+    top: 26.491647%;
+    width: 2.065290%;
+    height: 17.780430%;
+    background-image: url("../imagens/brilho-on/index_62.png");
+}
+
+.overhead-slice[data-slice="063"] {
+    left: 63.024650%;
+    top: 26.730310%;
+    width: 13.391073%;
+    height: 7.398568%;
+    background-image: url("../imagens/brilho-on/index_63.png");
+}
+
+.overhead-slice[data-slice="064"] {
+    left: 4.796802%;
+    top: 33.770883%;
+    width: 8.194537%;
+    height: 10.501193%;
+    background-image: url("../imagens/brilho-on/index_64.png");
+}
+
+.overhead-slice[data-slice="065"] {
+    left: 12.991339%;
+    top: 33.770883%;
+    width: 8.061292%;
+    height: 10.501193%;
+    background-image: url("../imagens/brilho-on/index_65.png");
+}
+
+.overhead-slice[data-slice="066"] {
+    left: 21.052632%;
+    top: 33.770883%;
+    width: 8.327781%;
+    height: 10.501193%;
+    background-image: url("../imagens/brilho-on/index_66.png");
+}
+
+.overhead-slice[data-slice="067"] {
+    left: 29.380413%;
+    top: 33.770883%;
+    width: 8.061292%;
+    height: 10.501193%;
+    background-image: url("../imagens/brilho-on/index_67.png");
+}
+
+.overhead-slice[data-slice="068"] {
+    left: 37.441706%;
+    top: 33.770883%;
+    width: 7.994670%;
+    height: 10.501193%;
+    background-image: url("../imagens/brilho-on/index_68.png");
+}
+
+.overhead-slice[data-slice="069"] {
+    left: 78.614257%;
+    top: 33.770883%;
+    width: 9.860093%;
+    height: 10.501193%;
+    background-image: url("../imagens/brilho-on/index_69.png");
+}
+
+.overhead-slice[data-slice="070"] {
+    left: 90.939374%;
+    top: 33.770883%;
+    width: 6.928714%;
+    height: 10.501193%;
+    background-image: url("../imagens/brilho-on/index_70.png");
+}
+
+.overhead-slice[data-slice="071"] {
+    left: 49.300466%;
+    top: 34.128878%;
+    width: 10.592938%;
+    height: 10.143198%;
+    background-image: url("../imagens/brilho-on/index_71.png");
+}
+
+.overhead-slice[data-slice="072"] {
+    left: 63.024650%;
+    top: 34.128878%;
+    width: 5.796136%;
+    height: 10.143198%;
+    background-image: url("../imagens/brilho-on/index_72.png");
+}
+
+.overhead-slice[data-slice="073"] {
+    left: 68.820786%;
+    top: 34.128878%;
+    width: 1.399067%;
+    height: 10.143198%;
+    background-image: url("../imagens/brilho-on/index_73.png");
+}
+
+.overhead-slice[data-slice="074"] {
+    left: 70.219853%;
+    top: 34.128878%;
+    width: 6.195869%;
+    height: 10.143198%;
+    background-image: url("../imagens/brilho-on/index_74.png");
+}
+
+.overhead-slice[data-slice="075"] {
+    left: 4.796802%;
+    top: 44.272076%;
+    width: 9.860093%;
+    height: 6.801909%;
+    background-image: url("../imagens/brilho-on/index_75.png");
+}
+
+.overhead-slice[data-slice="076"] {
+    left: 14.656895%;
+    top: 44.272076%;
+    width: 9.793471%;
+    height: 6.801909%;
+    background-image: url("../imagens/brilho-on/index_76.png");
+}
+
+.overhead-slice[data-slice="077"] {
+    left: 24.450366%;
+    top: 44.272076%;
+    width: 9.526982%;
+    height: 6.801909%;
+    background-image: url("../imagens/brilho-on/index_77.png");
+}
+
+.overhead-slice[data-slice="078"] {
+    left: 33.977348%;
+    top: 44.272076%;
+    width: 9.660227%;
+    height: 6.801909%;
+    background-image: url("../imagens/brilho-on/index_78.png");
+}
+
+.overhead-slice[data-slice="079"] {
+    left: 43.637575%;
+    top: 44.272076%;
+    width: 9.660227%;
+    height: 6.801909%;
+    background-image: url("../imagens/brilho-on/index_79.png");
+}
+
+.overhead-slice[data-slice="080"] {
+    left: 53.297801%;
+    top: 44.272076%;
+    width: 9.726849%;
+    height: 6.801909%;
+    background-image: url("../imagens/brilho-on/index_80.png");
+}
+
+.overhead-slice[data-slice="081"] {
+    left: 63.024650%;
+    top: 44.272076%;
+    width: 9.726849%;
+    height: 6.801909%;
+    background-image: url("../imagens/brilho-on/index_81.png");
+}
+
+.overhead-slice[data-slice="082"] {
+    left: 72.751499%;
+    top: 44.272076%;
+    width: 9.726849%;
+    height: 7.040573%;
+    background-image: url("../imagens/brilho-on/index_82.png");
+}
+
+.overhead-slice[data-slice="083"] {
+    left: 82.478348%;
+    top: 44.272076%;
+    width: 17.455030%;
+    height: 6.801909%;
+    background-image: url("../imagens/brilho-on/index_83.png");
+}
+
+.overhead-slice[data-slice="084"] {
+    left: 4.796802%;
+    top: 51.073986%;
+    width: 9.860093%;
+    height: 10.620525%;
+    background-image: url("../imagens/brilho-on/index_84.png");
+}
+
+.overhead-slice[data-slice="085"] {
+    left: 14.656895%;
+    top: 51.073986%;
+    width: 9.793471%;
+    height: 10.620525%;
+    background-image: url("../imagens/brilho-on/index_85.png");
+}
+
+.overhead-slice[data-slice="086"] {
+    left: 24.450366%;
+    top: 51.073986%;
+    width: 9.526982%;
+    height: 10.620525%;
+    background-image: url("../imagens/brilho-on/index_86.png");
+}
+
+.overhead-slice[data-slice="087"] {
+    left: 33.977348%;
+    top: 51.073986%;
+    width: 9.660227%;
+    height: 10.620525%;
+    background-image: url("../imagens/brilho-on/index_87.png");
+}
+
+.overhead-slice[data-slice="088"] {
+    left: 43.637575%;
+    top: 51.073986%;
+    width: 9.660227%;
+    height: 10.620525%;
+    background-image: url("../imagens/brilho-on/index_88.png");
+}
+
+.overhead-slice[data-slice="089"] {
+    left: 53.297801%;
+    top: 51.073986%;
+    width: 9.726849%;
+    height: 10.620525%;
+    background-image: url("../imagens/brilho-on/index_89.png");
+}
+
+.overhead-slice[data-slice="090"] {
+    left: 63.024650%;
+    top: 51.073986%;
+    width: 9.726849%;
+    height: 10.620525%;
+    background-image: url("../imagens/brilho-on/index_90.png");
+}
+
+.overhead-slice[data-slice="091"] {
+    left: 82.478348%;
+    top: 51.073986%;
+    width: 7.794803%;
+    height: 10.739857%;
+    background-image: url("../imagens/brilho-on/index_91.png");
+}
+
+.overhead-slice[data-slice="092"] {
+    left: 90.273151%;
+    top: 51.073986%;
+    width: 9.660227%;
+    height: 10.978520%;
+    background-image: url("../imagens/brilho-on/index_92.png");
+}
+
+.overhead-slice[data-slice="093"] {
+    left: 72.751499%;
+    top: 51.312649%;
+    width: 9.726849%;
+    height: 10.501193%;
+    background-image: url("../imagens/brilho-on/index_93.png");
+}
+
+.overhead-slice[data-slice="094"] {
+    left: 4.796802%;
+    top: 61.694511%;
+    width: 10.659560%;
+    height: 7.159905%;
+    background-image: url("../imagens/brilho-on/index_94.png");
+}
+
+.overhead-slice[data-slice="095"] {
+    left: 15.456362%;
+    top: 61.694511%;
+    width: 10.926049%;
+    height: 7.040573%;
+    background-image: url("../imagens/brilho-on/index_95.png");
+}
+
+.overhead-slice[data-slice="096"] {
+    left: 26.382412%;
+    top: 61.694511%;
+    width: 10.792805%;
+    height: 7.040573%;
+    background-image: url("../imagens/brilho-on/index_96.png");
+}
+
+.overhead-slice[data-slice="097"] {
+    left: 37.175217%;
+    top: 61.694511%;
+    width: 0.066622%;
+    height: 7.040573%;
+    background-image: url("../imagens/brilho-on/index_97.png");
+}
+
+.overhead-slice[data-slice="098"] {
+    left: 37.241839%;
+    top: 61.694511%;
+    width: 10.859427%;
+    height: 7.040573%;
+    background-image: url("../imagens/brilho-on/index_98.png");
+}
+
+.overhead-slice[data-slice="099"] {
+    left: 48.101266%;
+    top: 61.694511%;
+    width: 12.524983%;
+    height: 7.040573%;
+    background-image: url("../imagens/brilho-on/index_99.png");
+}
+
+.overhead-slice[data-slice="100"] {
+    left: 60.626249%;
+    top: 61.694511%;
+    width: 10.259827%;
+    height: 7.040573%;
+    background-image: url("../imagens/brilho-on/index_100.png");
+}
+
+.overhead-slice[data-slice="101"] {
+    left: 70.886076%;
+    top: 61.694511%;
+    width: 1.865423%;
+    height: 0.119332%;
+    background-image: url("../imagens/brilho-on/index_101.png");
+}
+
+.overhead-slice[data-slice="102"] {
+    left: 70.886076%;
+    top: 61.813842%;
+    width: 8.327781%;
+    height: 6.921241%;
+    background-image: url("../imagens/brilho-on/index_102.png");
+}
+
+.overhead-slice[data-slice="103"] {
+    left: 79.213857%;
+    top: 61.813842%;
+    width: 5.996003%;
+    height: 6.921241%;
+    background-image: url("../imagens/brilho-on/index_103.png");
+}
+
+.overhead-slice[data-slice="104"] {
+    left: 85.209860%;
+    top: 61.813842%;
+    width: 4.330446%;
+    height: 6.921241%;
+    background-image: url("../imagens/brilho-on/index_104.png");
+}
+
+.overhead-slice[data-slice="105"] {
+    left: 89.540306%;
+    top: 61.813842%;
+    width: 0.732845%;
+    height: 6.921241%;
+    background-image: url("../imagens/brilho-on/index_105.png");
+}
+
+.overhead-slice[data-slice="106"] {
+    left: 90.273151%;
+    top: 62.052506%;
+    width: 5.329780%;
+    height: 6.682578%;
+    background-image: url("../imagens/brilho-on/index_106.png");
+}
+
+.overhead-slice[data-slice="107"] {
+    left: 95.602931%;
+    top: 62.052506%;
+    width: 4.330446%;
+    height: 6.682578%;
+    background-image: url("../imagens/brilho-on/index_107.png");
+}
+
+.overhead-slice[data-slice="108"] {
+    left: 15.456362%;
+    top: 68.735084%;
+    width: 0.266489%;
+    height: 11.813842%;
+    background-image: url("../imagens/brilho-on/index_108.png");
+}
+
+.overhead-slice[data-slice="109"] {
+    left: 15.722851%;
+    top: 68.735084%;
+    width: 6.062625%;
+    height: 11.813842%;
+    background-image: url("../imagens/brilho-on/index_109.png");
+}
+
+.overhead-slice[data-slice="110"] {
+    left: 21.785476%;
+    top: 68.735084%;
+    width: 4.596935%;
+    height: 11.813842%;
+    background-image: url("../imagens/brilho-on/index_110.png");
+}
+
+.overhead-slice[data-slice="111"] {
+    left: 26.382412%;
+    top: 68.735084%;
+    width: 0.133245%;
+    height: 11.813842%;
+    background-image: url("../imagens/brilho-on/index_111.png");
+}
+
+.overhead-slice[data-slice="112"] {
+    left: 26.515656%;
+    top: 68.735084%;
+    width: 6.262492%;
+    height: 11.813842%;
+    background-image: url("../imagens/brilho-on/index_112.png");
+}
+
+.overhead-slice[data-slice="113"] {
+    left: 32.778148%;
+    top: 68.735084%;
+    width: 4.463691%;
+    height: 11.813842%;
+    background-image: url("../imagens/brilho-on/index_113.png");
+}
+
+.overhead-slice[data-slice="114"] {
+    left: 37.241839%;
+    top: 68.735084%;
+    width: 6.395736%;
+    height: 11.813842%;
+    background-image: url("../imagens/brilho-on/index_114.png");
+}
+
+.overhead-slice[data-slice="115"] {
+    left: 43.637575%;
+    top: 68.735084%;
+    width: 4.463691%;
+    height: 11.813842%;
+    background-image: url("../imagens/brilho-on/index_115.png");
+}
+
+.overhead-slice[data-slice="116"] {
+    left: 48.101266%;
+    top: 68.735084%;
+    width: 0.066622%;
+    height: 0.119332%;
+    background-image: url("../imagens/brilho-on/index_116.png");
+}
+
+.overhead-slice[data-slice="117"] {
+    left: 48.167888%;
+    top: 68.735084%;
+    width: 12.391739%;
+    height: 11.813842%;
+    background-image: url("../imagens/brilho-on/index_117.png");
+}
+
+.overhead-slice[data-slice="118"] {
+    left: 60.559627%;
+    top: 68.735084%;
+    width: 0.066622%;
+    height: 0.119332%;
+    background-image: url("../imagens/brilho-on/index_118.png");
+}
+
+.overhead-slice[data-slice="119"] {
+    left: 60.626249%;
+    top: 68.735084%;
+    width: 10.259827%;
+    height: 10.859189%;
+    background-image: url("../imagens/brilho-on/index_119.png");
+}
+
+.overhead-slice[data-slice="120"] {
+    left: 70.886076%;
+    top: 68.735084%;
+    width: 8.327781%;
+    height: 10.859189%;
+    background-image: url("../imagens/brilho-on/index_120.png");
+}
+
+.overhead-slice[data-slice="121"] {
+    left: 79.213857%;
+    top: 68.735084%;
+    width: 5.929380%;
+    height: 10.859189%;
+    background-image: url("../imagens/brilho-on/index_121.png");
+}
+
+.overhead-slice[data-slice="122"] {
+    left: 85.143238%;
+    top: 68.735084%;
+    width: 0.066622%;
+    height: 5.131265%;
+    background-image: url("../imagens/brilho-on/index_122.png");
+}
+
+.overhead-slice[data-slice="123"] {
+    left: 85.209860%;
+    top: 68.735084%;
+    width: 4.330446%;
+    height: 5.131265%;
+    background-image: url("../imagens/brilho-on/index_123.png");
+}
+
+.overhead-slice[data-slice="124"] {
+    left: 89.540306%;
+    top: 68.735084%;
+    width: 6.062625%;
+    height: 10.859189%;
+    background-image: url("../imagens/brilho-on/index_124.png");
+}
+
+.overhead-slice[data-slice="125"] {
+    left: 95.602931%;
+    top: 68.735084%;
+    width: 4.330446%;
+    height: 5.131265%;
+    background-image: url("../imagens/brilho-on/index_125.png");
+}
+
+.overhead-slice[data-slice="126"] {
+    left: 4.796802%;
+    top: 68.854415%;
+    width: 6.062625%;
+    height: 11.694511%;
+    background-image: url("../imagens/brilho-on/index_126.png");
+}
+
+.overhead-slice[data-slice="127"] {
+    left: 10.859427%;
+    top: 68.854415%;
+    width: 4.596935%;
+    height: 11.455847%;
+    background-image: url("../imagens/brilho-on/index_127.png");
+}
+
+.overhead-slice[data-slice="128"] {
+    left: 48.101266%;
+    top: 68.854415%;
+    width: 0.066622%;
+    height: 11.694511%;
+    background-image: url("../imagens/brilho-on/index_128.png");
+}
+
+.overhead-slice[data-slice="129"] {
+    left: 60.559627%;
+    top: 68.854415%;
+    width: 0.066622%;
+    height: 10.739857%;
+    background-image: url("../imagens/brilho-on/index_129.png");
+}
+
+.overhead-slice[data-slice="130"] {
+    left: 85.143238%;
+    top: 73.866348%;
+    width: 4.397069%;
+    height: 5.727924%;
+    background-image: url("../imagens/brilho-on/index_130.png");
+}
+
+.overhead-slice[data-slice="131"] {
+    left: 95.602931%;
+    top: 73.866348%;
+    width: 4.330446%;
+    height: 5.727924%;
+    background-image: url("../imagens/brilho-on/index_131.png");
+}
+
+.overhead-slice[data-slice="132"] {
+    left: 60.559627%;
+    top: 79.594272%;
+    width: 9.327115%;
+    height: 5.727924%;
+    background-image: url("../imagens/brilho-on/index_132.png");
+}
+
+.overhead-slice[data-slice="133"] {
+    left: 69.886742%;
+    top: 79.594272%;
+    width: 9.327115%;
+    height: 5.727924%;
+    background-image: url("../imagens/brilho-on/index_133.png");
+}
+
+.overhead-slice[data-slice="134"] {
+    left: 79.213857%;
+    top: 79.594272%;
+    width: 8.660893%;
+    height: 5.727924%;
+    background-image: url("../imagens/brilho-on/index_134.png");
+}
+
+.overhead-slice[data-slice="135"] {
+    left: 87.874750%;
+    top: 79.594272%;
+    width: 12.058628%;
+    height: 5.727924%;
+    background-image: url("../imagens/brilho-on/index_135.png");
+}
+
+.overhead-slice[data-slice="136"] {
+    left: 10.859427%;
+    top: 80.310263%;
+    width: 4.596935%;
+    height: 0.238663%;
+    background-image: url("../imagens/brilho-on/index_136.png");
+}
+
+.overhead-slice[data-slice="137"] {
+    left: 4.796802%;
+    top: 80.548926%;
+    width: 10.926049%;
+    height: 4.773270%;
+    background-image: url("../imagens/brilho-on/index_137.png");
+}
+
+.overhead-slice[data-slice="138"] {
+    left: 15.722851%;
+    top: 80.548926%;
+    width: 10.792805%;
+    height: 4.773270%;
+    background-image: url("../imagens/brilho-on/index_138.png");
+}
+
+.overhead-slice[data-slice="139"] {
+    left: 26.515656%;
+    top: 80.548926%;
+    width: 10.659560%;
+    height: 4.773270%;
+    background-image: url("../imagens/brilho-on/index_139.png");
+}
+
+.overhead-slice[data-slice="140"] {
+    left: 37.175217%;
+    top: 80.548926%;
+    width: 10.992672%;
+    height: 4.773270%;
+    background-image: url("../imagens/brilho-on/index_140.png");
+}
+
+.overhead-slice[data-slice="141"] {
+    left: 48.167888%;
+    top: 80.548926%;
+    width: 12.391739%;
+    height: 4.773270%;
+    background-image: url("../imagens/brilho-on/index_141.png");
+}
+
+.overhead-slice[data-slice="142"] {
+    left: 4.796802%;
+    top: 85.322196%;
+    width: 10.926049%;
+    height: 14.558473%;
+    background-image: url("../imagens/brilho-on/index_142.png");
+}
+
+.overhead-slice[data-slice="143"] {
+    left: 15.722851%;
+    top: 85.322196%;
+    width: 10.792805%;
+    height: 14.558473%;
+    background-image: url("../imagens/brilho-on/index_143.png");
+}
+
+.overhead-slice[data-slice="144"] {
+    left: 26.515656%;
+    top: 85.322196%;
+    width: 0.066622%;
+    height: 14.558473%;
+    background-image: url("../imagens/brilho-on/index_144.png");
+}
+
+.overhead-slice[data-slice="145"] {
+    left: 26.582278%;
+    top: 85.322196%;
+    width: 10.592938%;
+    height: 14.319809%;
+    background-image: url("../imagens/brilho-on/index_145.png");
+}
+
+.overhead-slice[data-slice="146"] {
+    left: 37.175217%;
+    top: 85.322196%;
+    width: 10.859427%;
+    height: 14.558473%;
+    background-image: url("../imagens/brilho-on/index_146.png");
+}
+
+.overhead-slice[data-slice="147"] {
+    left: 48.034644%;
+    top: 85.322196%;
+    width: 0.066622%;
+    height: 14.558473%;
+    background-image: url("../imagens/brilho-on/index_147.png");
+}
+
+.overhead-slice[data-slice="148"] {
+    left: 48.101266%;
+    top: 85.322196%;
+    width: 12.524983%;
+    height: 14.558473%;
+    background-image: url("../imagens/brilho-on/index_148.png");
+}
+
+.overhead-slice[data-slice="149"] {
+    left: 60.626249%;
+    top: 85.322196%;
+    width: 9.260493%;
+    height: 14.558473%;
+    background-image: url("../imagens/brilho-on/index_149.png");
+}
+
+.overhead-slice[data-slice="150"] {
+    left: 69.886742%;
+    top: 85.322196%;
+    width: 9.327115%;
+    height: 14.558473%;
+    background-image: url("../imagens/brilho-on/index_150.png");
+}
+
+.overhead-slice[data-slice="151"] {
+    left: 79.213857%;
+    top: 85.322196%;
+    width: 8.660893%;
+    height: 14.558473%;
+    background-image: url("../imagens/brilho-on/index_151.png");
+}
+
+.overhead-slice[data-slice="152"] {
+    left: 87.874750%;
+    top: 85.322196%;
+    width: 6.129247%;
+    height: 14.558473%;
+    background-image: url("../imagens/brilho-on/index_152.png");
+}
+
+.overhead-slice[data-slice="153"] {
+    left: 94.003997%;
+    top: 85.322196%;
+    width: 5.929380%;
+    height: 14.558473%;
+    background-image: url("../imagens/brilho-on/index_153.png");
+}
+
+.overhead-slice[data-slice="154"] {
+    left: 26.582278%;
+    top: 99.642005%;
+    width: 10.592938%;
+    height: 0.238663%;
+    background-image: url("../imagens/brilho-on/index_154.png");
+}
+

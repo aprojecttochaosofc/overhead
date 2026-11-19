@@ -1,0 +1,818 @@
+{
+  "version": 2,
+  "totalVjoyButtons": 61,
+  "connection": {
+    "ip": "",
+    "port": ""
+  },
+  "startupEvent": null,
+  "controls": [
+    {
+      "name": "IRS 1",
+      "type": "knob",
+      "x": 145,
+      "y": 235,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 1
+        },
+        {
+          "label": "NAV",
+          "vjoyButton": 2
+        },
+        {
+          "label": "ATT",
+          "vjoyButton": 3
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "IRS 3",
+      "type": "knob",
+      "x": 365,
+      "y": 235,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 4
+        },
+        {
+          "label": "NAV",
+          "vjoyButton": 5
+        },
+        {
+          "label": "ATT",
+          "vjoyButton": 6
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "IRS 2",
+      "type": "knob",
+      "x": 583,
+      "y": 235,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 7
+        },
+        {
+          "label": "NAV",
+          "vjoyButton": 8
+        },
+        {
+          "label": "ATT",
+          "vjoyButton": 9
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "ENG 1 TEST",
+      "type": "green",
+      "x": 1354,
+      "y": 82,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": null
+        },
+        {
+          "label": "ON",
+          "vjoyButton": null
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "APU TEST",
+      "type": "green",
+      "x": 1444,
+      "y": 82,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": null
+        },
+        {
+          "label": "ON",
+          "vjoyButton": null
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "L TK PUMP 1",
+      "type": "green",
+      "x": 805,
+      "y": 241,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 10
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 10
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "L TK PUMP 2",
+      "type": "green",
+      "x": 909,
+      "y": 241,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 11
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 11
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "CTR TK PUMP 1",
+      "type": "green",
+      "x": 1031,
+      "y": 247,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 12
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 12
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "XFEED",
+      "type": "green",
+      "x": 1146,
+      "y": 241,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 13
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 13
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "CTR TK PUMP 2",
+      "type": "green",
+      "x": 1252,
+      "y": 241,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 14
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 14
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "R TK PUMP 1",
+      "type": "green",
+      "x": 1366,
+      "y": 247,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 15
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 15
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "R TK PUMP 2",
+      "type": "green",
+      "x": 1467,
+      "y": 247,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 16
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 16
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "TERR",
+      "type": "gpws",
+      "x": 135,
+      "y": 394,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 17
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 17
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "GPWS SYS",
+      "type": "gpws",
+      "x": 249,
+      "y": 394,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 18
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 18
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "G/S MODE",
+      "type": "gpws",
+      "x": 363,
+      "y": 394,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 19
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 19
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "FLAP MODE",
+      "type": "gpws",
+      "x": 477,
+      "y": 394,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 61
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 61
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "LDG FLAP 3",
+      "type": "gpws",
+      "x": 591,
+      "y": 394,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 20
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 20
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "BAT 1",
+      "type": "green",
+      "x": 1005,
+      "y": 391,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 21
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 21
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "BAT 2 (left)",
+      "type": "green",
+      "x": 1110,
+      "y": 391,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 22
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 22
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "EXT PWR",
+      "type": "green",
+      "x": 1419,
+      "y": 386,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 23
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 23
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "WING ANTI ICE",
+      "type": "green",
+      "x": 133,
+      "y": 572,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 24
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 24
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "ENG 1 ANTI ICE",
+      "type": "green",
+      "x": 283,
+      "y": 572,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 25
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 25
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "ENG 2 ANTI ICE",
+      "type": "green",
+      "x": 433,
+      "y": 572,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 26
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 26
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "CREW SUPPLY",
+      "type": "push",
+      "x": 585,
+      "y": 572,
+      "positions": [
+        {
+          "label": "PRESS",
+          "vjoyButton": 27
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "CALLS",
+      "type": "push",
+      "x": 728,
+      "y": 570,
+      "positions": [
+        {
+          "label": "PRESS",
+          "vjoyButton": 28
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "PACK 1",
+      "type": "green",
+      "x": 897,
+      "y": 572,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 29
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 29
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "APU BLEED",
+      "type": "green",
+      "x": 1038,
+      "y": 572,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 30
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 30
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "PACK 2",
+      "type": "green",
+      "x": 1180,
+      "y": 572,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 31
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 31
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "WIPER",
+      "type": "knob",
+      "x": 1348,
+      "y": 590,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 32
+        },
+        {
+          "label": "SLOW",
+          "vjoyButton": 33
+        },
+        {
+          "label": "FAST",
+          "vjoyButton": 34
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "STROBE",
+      "type": "switch",
+      "x": 122,
+      "y": 758,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 35
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 35
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "BEACON",
+      "type": "switch",
+      "x": 274,
+      "y": 758,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 36
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 36
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "WING LIGHT",
+      "type": "switch",
+      "x": 451,
+      "y": 758,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 37
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 37
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "NAV & LOGO 2",
+      "type": "switch",
+      "x": 626,
+      "y": 758,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 38
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 38
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "MASTER SW",
+      "type": "green",
+      "x": 837,
+      "y": 783,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 39
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 39
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "OXYD INTEG LT",
+      "type": "switch",
+      "x": 1015,
+      "y": 744,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 41
+        },
+        {
+          "label": "BRT",
+          "vjoyButton": 40
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "STBY COMPASS",
+      "type": "switch",
+      "x": 1160,
+      "y": 754,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 60
+        },
+        {
+          "label": "BRT",
+          "vjoyButton": 60
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "INT LT DOME",
+      "type": "switch",
+      "x": 1289,
+      "y": 754,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 44
+        },
+        {
+          "label": "BRT",
+          "vjoyButton": 43
+        },
+        {
+          "label": "BRT",
+          "vjoyButton": 42
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "ANN LT",
+      "type": "switch",
+      "x": 1433,
+      "y": 754,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 47
+        },
+        {
+          "label": "BRT",
+          "vjoyButton": 46
+        },
+        {
+          "label": "TEST",
+          "vjoyButton": 45
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "RWY TURN OFF",
+      "type": "switch",
+      "x": 135,
+      "y": 925,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 48
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 48
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "LAND L",
+      "type": "switch",
+      "x": 298,
+      "y": 926,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 49
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 49
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "LAND R",
+      "type": "switch",
+      "x": 487,
+      "y": 926,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 50
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 50
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "NOSE",
+      "type": "switch",
+      "x": 635,
+      "y": 926,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 53
+        },
+        {
+          "label": "TAXI",
+          "vjoyButton": 52
+        },
+        {
+          "label": "T.O.",
+          "vjoyButton": 51
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "START",
+      "type": "green",
+      "x": 837,
+      "y": 926,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 54
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 54
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "SEAT BELTS",
+      "type": "switch",
+      "x": 1002,
+      "y": 925,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 55
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 55
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "NO SMOKING",
+      "type": "switch",
+      "x": 1128,
+      "y": 925,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 56
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 56
+        }
+      ],
+      "initialPosition": 0
+    },
+    {
+      "name": "SIGNS ARM",
+      "type": "switch",
+      "x": 1393,
+      "y": 925,
+      "positions": [
+        {
+          "label": "OFF",
+          "vjoyButton": 57
+        },
+        {
+          "label": "ARMED",
+          "vjoyButton": 58
+        },
+        {
+          "label": "ON",
+          "vjoyButton": 59
+        }
+      ],
+      "initialPosition": 0
+    }
+  ],
+  "events": []
+}

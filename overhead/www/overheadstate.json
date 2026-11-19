@@ -1,0 +1,313 @@
+{
+  "version": 1,
+  "savedAt": null,
+  "connection": {
+    "ip": "",
+    "port": ""
+  },
+  "controls": {
+    "ohFault_01": {
+      "type": "warning",
+      "state": "off"
+    },
+    "ohFault_02": {
+      "type": "warning",
+      "state": "off"
+    },
+    "ohFault_03": {
+      "type": "warning",
+      "state": "off"
+    },
+    "ohFault_06": {
+      "type": "warning",
+      "state": "off"
+    },
+    "ohFault_07": {
+      "type": "warning",
+      "state": "off"
+    },
+    "ohFault_08": {
+      "type": "warning",
+      "state": "off"
+    },
+    "ohFault_04": {
+      "type": "warning",
+      "state": "off"
+    },
+    "ohFault_05": {
+      "type": "warning",
+      "state": "off"
+    },
+    "ohPbRd_01": {
+      "type": "round",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbRd_03": {
+      "type": "round",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbRd_04": {
+      "type": "round",
+      "state": "off",
+      "fault": false
+    },
+    "ohKnV3_01": {
+      "type": "knob",
+      "position": 3,
+      "direction": -1
+    },
+    "ohKnV_04": {
+      "type": "knob",
+      "position": 1,
+      "direction": 1
+    },
+    "ohKnV_05": {
+      "type": "knob",
+      "position": 1,
+      "direction": 1
+    },
+    "ohPbSq_01": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_02": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_03": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_04": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_05": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_06": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_24": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_07": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_08": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_09": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_10": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_11": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohDisp_01": {
+      "type": "display",
+      "value": "26.5",
+      "unit": "V"
+    },
+    "ohPbSq_12": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohDisp_02": {
+      "type": "display",
+      "value": "26.5",
+      "unit": "V"
+    },
+    "ohPbSq_13": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_14": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_15": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_16": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_17": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_18": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbRd_05": {
+      "type": "round",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_19": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohPbSq_20": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohKnH_01": {
+      "type": "knob",
+      "position": 1,
+      "direction": 1
+    },
+    "ohPbSq_21": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohSw2_01": {
+      "type": "switch",
+      "positions": 2,
+      "state": 0,
+      "position": 1,
+      "direction": 1
+    },
+    "ohSw2_02": {
+      "type": "switch",
+      "positions": 2,
+      "state": 0,
+      "position": 1,
+      "direction": 1
+    },
+    "ohSw3_01": {
+      "type": "switch",
+      "positions": 3,
+      "state": 0,
+      "position": 1,
+      "direction": 1
+    },
+    "ohPbSq_22": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohKnV_06": {
+      "type": "knob",
+      "position": 1,
+      "direction": 1
+    },
+    "ohPbRd_02": {
+      "type": "round",
+      "state": "off",
+      "fault": false
+    },
+    "ohKnH_02": {
+      "type": "knob",
+      "position": 1,
+      "direction": 1
+    },
+    "ohKnH_03": {
+      "type": "knob",
+      "position": 1,
+      "direction": 1
+    },
+    "ohSw2_03": {
+      "type": "switch",
+      "positions": 2,
+      "state": 0,
+      "position": 1,
+      "direction": 1
+    },
+    "ohSw2_04": {
+      "type": "switch",
+      "positions": 2,
+      "state": 0,
+      "position": 1,
+      "direction": 1
+    },
+    "ohSw3_02": {
+      "type": "switch",
+      "positions": 3,
+      "state": 0,
+      "position": 1,
+      "direction": 1
+    },
+    "ohSw3_pair144a": {
+      "type": "switch",
+      "positions": 3,
+      "state": 0,
+      "position": 1,
+      "direction": 1
+    },
+    "ohSw3_pair144b": {
+      "type": "switch",
+      "positions": 3,
+      "state": 0,
+      "position": 1,
+      "direction": 1
+    },
+    "ohPbSq_23": {
+      "type": "push",
+      "state": "off",
+      "fault": false
+    },
+    "ohSw2_05": {
+      "type": "switch",
+      "positions": 2,
+      "state": 0,
+      "position": 1,
+      "direction": 1
+    },
+    "ohSw2_06": {
+      "type": "switch",
+      "positions": 2,
+      "state": 0,
+      "position": 1,
+      "direction": 1
+    },
+    "ohFault_pair149left": {
+      "type": "warning",
+      "state": "off"
+    },
+    "ohSw3_pair149right": {
+      "type": "switch",
+      "positions": 3,
+      "state": 0,
+      "position": 1,
+      "direction": 1
+    }
+  }
+}

@@ -1,0 +1,222 @@
+﻿<!doctype html>
+<html lang="pt-BR" data-aircraft-powered="false">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Overhead</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/controls.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link id="overheadBrightnessTheme" rel="stylesheet" type="text/css" href="css/brilho-off.css">
+</head>
+<body>
+    <main class="overhead-viewport" aria-label="Painel overhead">
+        <div id="overheadStage" class="overhead-stage">
+            <div id="overheadCanvas" class="overhead-canvas">
+                <div class="overhead-slice" data-slice="001" aria-hidden="true">config</div>
+                <div class="overhead-slice" data-slice="002" aria-hidden="true" title="AVISO ADIRS DO IR1">ohFault</div><!-- aviso do BOTAO ADIRS DO IR1, ele fica so align quando o adirs alinhar ele tem qeu ficar sem nenhum aviso quando eu colocar no fmc os dados do gps e ele alinah r esse aviso align tem eu sumir e ficar sem nenhum aviso  -->
+                <div class="overhead-slice" data-slice="003" aria-hidden="true" title="AVISO ADIRS DO IR2">ohFault</div><!-- aviso do BOTAO ADIRS DO IR1, ele fica so align quando o adirs alinhar ele tem qeu ficar sem nenhum aviso quando eu colocar no fmc os dados do gps e ele alinah r esse aviso align tem eu sumir e ficar sem nenhum aviso  -->
+                <div class="overhead-slice" data-slice="004" aria-hidden="true" title="AVISO ADIRS DO IR3">ohFault</div><!-- aviso do BOTAO ADIRS DO IR1, ele fica so align quando o adirs alinhar ele tem qeu ficar sem nenhum aviso quando eu colocar no fmc os dados do gps e ele alinah r esse aviso align tem eu sumir e ficar sem nenhum aviso  -->
+                <div class="overhead-slice" data-slice="005" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="006" data-light-id="ohLightFire1" aria-hidden="true" title="luz do botao teste de fogo 1  ">luzcon</div> <!-- funcionando -->
+                <div class="overhead-slice" data-slice="007" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="008" data-light-id="ohLightApuFire" aria-hidden="true" title="luz do botao teste fogo apu">luzcon</div>   <!-- funcionando -->
+                <div class="overhead-slice" data-slice="009" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="010" data-light-id="ohLightFire2" aria-hidden="true" title=" luz do botao teste de fogo 2 ">luzcon</div> <!-- funcionando -->
+                <div class="overhead-slice" data-slice="011" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="012" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="013" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="014" aria-hidden="true">ohFault</div>
+                <div class="overhead-slice" data-slice="015" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="016" aria-hidden="true">ohFault</div>
+                <div class="overhead-slice" data-slice="017" aria-hidden="true">luzcon</div>
+                <div class="overhead-slice" data-slice="018" data-light-target="ohLightFire1" aria-hidden="true" title="botao teste de fogo 1  ">ohPbRd</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="019" data-light-target="ohLightApuFire" aria-hidden="true" title="botao teste fogo apu ">ohPbRd</div> <!-- funcionando -->
+                <div class="overhead-slice" data-slice="020" data-light-target="ohLightFire2" aria-hidden="true" title="botao teste de fogo 2 ">ohPbRd</div> <!-- funcionando -->
+                <div class="overhead-slice" data-slice="021" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="022" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="023" aria-hidden="true" title="BOTAO ADIRS DO IR1 POS1=OFF POS2=NAV POS3=ATT ACIONAR O NAV MANDAR PARA AVISO DO IR1 A AÇÃO DO TOLIS">ohKnV</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="024" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="025" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="026" aria-hidden="true" title="BOTAO ADIRS DO IR2 POS1=OFF POS2=NAV POS3=ATT ACIONAR O NAV MANDAR PARA AVISO DO IR2 A AÇÃO DO TOLIS">ohKnV</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="027" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="028" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="029"  aria-hidden="true" title="BOTAO ADIRS DO IR3 POS1=OFF POS2=NAV POS3=ATT ACIONAR O NAV MANDAR PARA AVISO DO IR3 A AÇÃO DO TOLIS">ohKnV</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="030" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="031" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="032" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="033" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="034" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="035" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="036" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="037" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="038" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="039" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="040" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="041" aria-hidden="true" title="eng 1 LTK PUMPS 1">ohPbSq</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="042" aria-hidden="true" title="eng 1 LTK PUMPS 1">ohPbSq</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="043" aria-hidden="true" title="CTR TK PUMPS 1">ohPbSq</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="044" aria-hidden="true" title="XFEED PUMP">ohPbSq</div><!--  esta sempre em off nao liga nada e o botão do cross feed  -->
+                <div class="overhead-slice" data-slice="045" aria-hidden="true" title="CTR TK PUMPS 2">ohPbSq</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="046" aria-hidden="true" title="eng 2 LTK PUMPS 1">ohPbSq</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="047" aria-hidden="true" title="eng 3 LTK PUMPS 1">ohPbSq</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="048" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="049" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="050" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="051" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="052" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="053" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="054" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="055" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="056" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="057" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="058" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="059" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="060" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="061" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="062" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="063" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="064" aria-hidden="true" title="GPWS TERR">ohPbSq</div><!-- quando eu clico no cordova aqui ele aciona o terr mas quem recebe a ação do tollis é  GPWS FLAPMODE vc colocou a ação do trr no GPWS FLAPMODE quando aciono o terr e quando eu clico novament epara desligar ele nao desliga quando eu clico pra ligar ele sempre fica off -->
+                <div class="overhead-slice" data-slice="065" aria-hidden="true" title="GPWS SYS">ohPbSq</div><!-- aqui ele ta acionando ok mas nao desativa, e quando aciona quem muda é  GPWS TERR ele ta off no cordova quando eu aciono o sys o GPWS TERR fica ssem luz indicando que ta on mas no tollis o GPWS TERR ta off ou seja o estado de ys no cordova ta e em GPWS TERR par aligado e quando desligo o sys nao faz nada-->
+                <div class="overhead-slice" data-slice="066" aria-hidden="true" title="GPWS G/S MODE">ohPbSq</div><!-- o g/s MODE ELE LIGA APARECE NO TOLIS QUE OFF SUMIU MAS NO CORDOVA IANDA FICA OFF E ELE NAO DESLIGA -->
+                <div class="overhead-slice" data-slice="067" aria-hidden="true" title="GPWS FLAPMODE">ohPbSq</div><!-- TODOS OS GPWS FICAM OFF NO TOLIS QUANDO DESLIGO NO TOLIS APARECE TODOS DESLIGADOS NO CORDOVA MAS ELE AQUI FICA SEM OFF COMO SE ESTIVESSE LIGADO QUANDO EU CLICO PRA DESLIGAR NAO ACONTECE NADA QUANDO COLOCO ELE OFF NO TOLLIS QUEM APARECE OFF NO CORDOVA É GPWS G/S MODE OU SEJA FLAPMODE QEU ACIONA É GPWS G/S MODE E RECEBE O ESTADO E VAI É PRA GPWS G/S MODE -->
+                <div class="overhead-slice" data-slice="068" data-on-indication="true" data-off-label="hidden" aria-hidden="true" title="GPWS LDG FLAP3">ohPbSq</div><!-- QUANDO ELE TIVER DESLIGADO FICA SEM OFF E NAO APARECE LUZ NENHUM QUANDO TIVER ON ELE FICA ON AZUL</q> -->
+                <div class="overhead-slice" data-slice="069" aria-hidden="true" title="mostrador da bateria 2">ohDisp</div> <!-- funcionando -->
+                <div class="overhead-slice" data-slice="070" aria-hidden="true" title="BOTAO EXTERNAL POWER">ohPbSq3</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="071" aria-hidden="true" title="mostrador da bateria 1">ohDisp</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="072" aria-hidden="true" title="botao bateria 1">ohPbSq</div> <!-- funcionando -->
+                <div class="overhead-slice" data-slice="073" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="074" aria-hidden="true" title="botao bateria 2">ohPbSq</div> <!-- funcionando -->
+                <div class="overhead-slice" data-slice="075" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="076" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="077" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="078" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="079" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="080" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="081" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="082" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="083" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="084" aria-hidden="true" title="ANTI ICE WINGS">ohPbSq</div><!-- SO TA INVERTIDO, O CERTO É LIGADO FICA ON AZUL DESLIGADO NAO APARECE NADA -->
+                <div class="overhead-slice" data-slice="085" aria-hidden="true" title="ANTI ICE ENG 1">ohPbSq</div><!-- SO TA INVERTIDO, O CERTO É LIGADO FICA ON AZUL DESLIGADO NAO APARECE NADA -->
+                <div class="overhead-slice" data-slice="086" aria-hidden="true" title="ANTI ICE ENG 2">ohPbSq</div><!-- SO TA INVERTIDO, O CERTO É LIGADO FICA ON  AZUL DESLIGADO NAO APARECE NADA -->
+                <div class="overhead-slice" data-slice="087" aria-hidden="true" title="BOTAO CREWW SUPLY">ohPbSq</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="088" aria-hidden="true" title="BOTAO CALL FWD">ohPbRd</div><!-- ELE NAO TA ACIONANDO O CALL FWD ELE AINDA NAO ACIONA NAO CHAMA O FWD-->
+                <div class="overhead-slice" data-slice="089" aria-hidden="true" title="AIR CONDITIONADO PACK 1">ohPbSq</div><!-- funcionando MAS ELE TA APARECENDO UM AVISO DE FAULT QUE SERIA O FAIL E NAO TA APARECENDO NO CORDOVA-->
+                <div class="overhead-slice" data-slice="090" data-on-indication="true" data-off-label="hidden" aria-hidden="true" title="AIR CONDITIONADO APU BLEED">ohPbSq</div><!-- funcionando QUANDO TA LIGADO FICA ON DESLIGADO NAO PODE APARECER NADA-->
+                <div class="overhead-slice" data-slice="091" aria-hidden="true" title="BOTAO WIPER ESQEURDO COMANDANTE">ohKnH</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="092" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="093" aria-hidden="true" title="AIR CONDITIONADO PACK 2">ohPbSq</div><!-- funcionando MAS ELE TA APARECENDO UM AVISO DE FAULT QUE SERIA O FAIL E NAO TA APARECENDO NO CORDOVA-->
+                <div class="overhead-slice" data-slice="094" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="095" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="096" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="097" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="098" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="099" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="100" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="101" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="102" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="103" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="104" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="105" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="106" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="107" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="108" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="109" aria-hidden="true" title="chave luz beacon">ohSw2</div><!-- aqui nao ta acendendo nada era rpa acender a beacon -->
+                <div class="overhead-slice" data-slice="110" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="111" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="112" aria-hidden="true" title="chave luz wings on off">ohSw2</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="113" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="114" aria-hidden="true" title="chave luz nav logo on off">ohSw3</div><!-- funcionando MAS SAO TRES POSIÇÃOS 1 OFF 2 MEIO E 3 ON -->
+                <div class="overhead-slice" data-slice="115" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="116" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="117" data-on-indication="true" aria-hidden="true" title="botao apu master">ohPbSq</div>
+                <!-- funcionando QUANDO ELA ESTIVER FUNCIONANDO TEM QEU MOSTRAR ON AZUL TA FICANDO SEM NADA NAO TA MOSTRANDO ON AZUL QUANDO TA ACIONADO-->
+                <div class="overhead-slice" data-slice="118" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="119" aria-hidden="true" title="botao ovhd integ lt 3 pos, 1 off 2 luz media 3 luz no maximo">ohKnV</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="120" aria-hidden="true"  title="chavestby compass on off">ohSw2</div>
+                <div class="overhead-slice" data-slice="121" aria-hidden="true" title="chave dome">ohSw3</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="122" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="123" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="124" aria-hidden="true" title="chave ANN LT">ohSw3</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="125" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="126" aria-hidden="true" title="chave STROBES POS 1 OFF POS 2 CENTRO POS 3 ON">ohSw3</div><!-- posição 1 OFF, posição 2 CENTRO, posição 3 ON -->
+                <div class="overhead-slice" data-slice="127" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="128" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="129" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="130" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="131" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="132" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="133" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="134" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="135" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="136" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="137" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="138" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="139" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="140" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="141" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="142" aria-hidden="true" title="chave RWY TURN OFF, POSIÇÕES ON OFF">ohSw2</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="143" aria-hidden="true" title="chave LANDLIGTHS LEFT POAS 1 ON MEIO RETRACT 3 OFF">ohSw3</div><!-- funcionando POREM TA ERRADO SO AS POSIÇÕES 1 E 3 SO INVERTER  MEIO TA OK -->
+                <div class="overhead-slice" data-slice="144" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="145" aria-hidden="true" title="chave LANDLIGTHS RIGTH POAS 1 ON MEIO RETRACT 3 OFF">ohSw3</div><!-- funcionando POREM TA ERRADO SO AS POSIÇÕES 1 E 3 SO INVERTER  MEIO TA OK -->
+                <div class="overhead-slice" data-slice="146" aria-hidden="true" title="chave NOSE POS 1 T.O ON  MEIO TAXI E POS 3 OFF">ohSw3</div><!-- funcionando POREM TA ERRADO SO AS POSIÇÕES 1 E 3 SO INVERTER  MEIO TA OK -->
+                <div class="overhead-slice" data-slice="147" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="148" aria-hidden="true" title="BOTÃO START APU ESTADOS OFF DESLIGADO ON LIGANDO E AVAIL APU LIGADA">ohPbSq3</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="149" aria-hidden="true" title="chave SITBELS ON OFF">ohSw2</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="150" aria-hidden="true" title="chave NOSMOKE ON OFF">ohSw2</div><!-- funcionando -->
+                <div class="overhead-slice" data-slice="151" aria-hidden="true" title="AVISO DE FALHA DO EMERGEXITLGL">ohFault</div><!-- funcionando quando o chave EMERGEXITLGL POS 1 ON POS MEIO ARMED POS 3 OFF e ativado o AVISO DE FALHA DO EMERGEXITLGL off quando ta desligado e sem o off ou on quando ta ligado-->
+                <div class="overhead-slice" data-slice="152" aria-hidden="true" title="chave EMERGEXITLGL POS 1 ON POS MEIO ARMED POS 3 OFF">ohSw3</div><!-- funcionando so ta invertido o 1 e o 2 o centro t aok -->
+                <div class="overhead-slice" data-slice="153" aria-hidden="true"></div>
+                <div class="overhead-slice" data-slice="154" aria-hidden="true"></div>
+            </div>
+        </div>
+    </main>
+    <div id="activationNotice" class="activation-notice" role="alertdialog" aria-modal="true" aria-labelledby="activationNoticeTitle" hidden>
+        <section class="activation-notice-card">
+            <h2 id="activationNoticeTitle">Skyforge Overhead não ativado</h2>
+            <p>Ative o sistema no computador pelo ícone do servidor na bandeja do Windows. Depois, o app conectará automaticamente.</p>
+        </section>
+    </div>
+    <div id="connectionLostNotice" class="connection-lost-notice" role="alertdialog" aria-modal="true" aria-labelledby="connectionLostTitle" hidden>
+        <section class="connection-lost-card">
+            <h2 id="connectionLostTitle">Conexão perdida</h2>
+            <p id="connectionLostMessage">O servidor não está respondendo. O Cordova tentará reconectar automaticamente.</p>
+            <button id="reconnectConnectionButton" type="button">Reconectar</button>
+        </section>
+    </div>
+    <div id="settingsShade" class="settings-shade" hidden>
+        <section class="settings-panel" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+            <button id="closeSettings" class="settings-close" type="button" aria-label="Fechar configurações">×</button>
+            <h2 id="settingsTitle">Configurações</h2>
+            <p class="settings-description">Conexão com o servidor do PC</p>
+            <label for="serverIp">IP do servidor</label>
+            <input id="serverIp" type="text" inputmode="decimal" autocomplete="off">
+            <label for="serverPort">Porta</label>
+            <input id="serverPort" type="number" inputmode="numeric" min="1" max="65535">
+            <p id="connectionMessage" class="connection-message" role="status" aria-live="polite"></p>
+            <div class="settings-actions">
+                <button id="saveSettings" type="button">Salvar</button>
+                <button id="connectButton" type="button">Conectar</button>
+            </div>
+            <div class="settings-actions settings-actions-disconnect">
+                <button id="disconnectExitButton" type="button">Desconectar e fechar app</button>
+            </div>
+        </section>
+    </div>
+    <script src="js/overhead-layout.js"></script>
+    <script src="js/pinch-zoom.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/overhead-controls.js"></script>
+    <script src="js/overhead-elements.js"></script>
+    <script src="js/overhead-bridge-client.js"></script>
+    <script src="js/batteries/battery-1.js"></script>
+    <script src="js/batteries/battery-2.js"></script>
+    <script src="js/external-power-config.js"></script>
+    <script src="js/external-power.js"></script>
+    <script src="js/battery.js"></script>
+    <script src="js/toliss-overhead.js"></script>
+    <script src="js/overhead-state.js"></script>
+    <script src="js/overhead-brightness-theme.js"></script>
+</body>
+</html>

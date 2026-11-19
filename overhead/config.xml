@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="br.controlevoo.app" version="1.0.0"
+    xmlns="http://www.w3.org/ns/widgets"
+    xmlns:cdv="http://cordova.apache.org/ns/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <name>OVERHEAD</name>
+    <description>OVERHEAD.</description>
+
+    <content src="index.html" />
+
+    <access origin="*" />
+
+    <allow-navigation href="http://*/*" />
+    <allow-navigation href="https://*/*" />
+    <allow-navigation href="http://192.168.*/*" />
+    <allow-navigation href="http://localhost/*" />
+
+    <preference name="Orientation" value="default" />
+    <preference name="Fullscreen" value="true" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="AndroidLaunchMode" value="singleTask" />
+
+    <preference name="AndroidXEnabled" value="true" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="iosPersistentFileLocation" value="Library" />
+
+    <platform name="android">
+        <preference name="scheme" value="http" />
+
+        <icon density="mdpi" src="res/icone.png" />
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+        </config-file>
+
+        <edit-config
+            file="app/src/main/AndroidManifest.xml"
+            mode="merge"
+            target="/manifest/application">
+            <application android:usesCleartextTraffic="true" />
+        </edit-config>
+
+        <allow-intent href="http://*/*" />
+        <allow-intent href="https://*/*" />
+
+    </platform>
+
+    <platform name="ios">
+        <!-- The overhead connects to a user-configured PC IP with ws:// over the LAN. -->
+        <config-file target="*-Info.plist" parent="/*/dict">
+            <key>NSLocalNetworkUsageDescription</key>
+            <string>O Skyforge Overhead conecta-se ao servidor local do computador para receber os estados do X-Plane.</string>
+            <key>NSAppTransportSecurity</key>
+            <dict>
+                <key>NSAllowsLocalNetworking</key>
+                <true />
+                <key>NSAllowsArbitraryLoadsInWebContent</key>
+                <true />
+            </dict>
+        </config-file>
+    </platform>
+
+</widget>
